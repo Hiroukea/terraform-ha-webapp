@@ -1,4 +1,4 @@
-﻿variable "project_name" {
+variable "project_name" {
   type        = string
   description = "Name prefix for all resources"
   default     = "tf-ha-webapp"

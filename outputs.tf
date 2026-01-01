@@ -1,12 +1,12 @@
-﻿output "alb_dns_name" {
-  value       = aws_lb.this.dns_name
+output "alb_dns_name" {
+  value       = module.alb.alb_dns_name
   description = "Open this in your browser"
 }
 
 output "vpc_id" {
-  value = aws_vpc.this.id
+  value = module.vpc.vpc_id
 }
 
 output "public_subnet_ids" {
-  value = aws_subnet.public[*].id
+  value = module.vpc.public_subnet_ids
 }
