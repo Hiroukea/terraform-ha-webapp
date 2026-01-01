@@ -4,7 +4,7 @@ Live Demo
 
 http://tf-lb-20251231232303230300000007-1483767039.us-east-1.elb.amazonaws.com/
 
-This project was deployed on-demand and destroyed after validation to avoid unnecessary cloud costs.
+This project was deployed and destroyed after confirmation to avoid unnecessary cloud costs.
 
 It demonstrates how to design, deploy, and manage a highly available web application on AWS using Terraform with a modular infrastructure-as-code approach
 
