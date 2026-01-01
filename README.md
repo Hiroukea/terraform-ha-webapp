@@ -1,33 +1,24 @@
-﻿# Terraform Highly Available Web App (Project 1)
+# Terraform – Highly Available AWS Web Application
 
-This repo provisions a highly available web application on AWS using Terraform.
+Live Demo
 
-## What it builds
-- VPC
-- 2 Public Subnets (2 AZs)
-- Internet Gateway + routing
-- Security Groups (ALB + EC2)
-- Application Load Balancer (HTTP :80)
-- Target Group + Listener
-- Launch Template (Amazon Linux 2023 + Apache via user data)
-- Auto Scaling Group (desired/min 2, max 4)
-- Remote Terraform state (S3 backend + DynamoDB locking)
+http://tf-lb-20251231232303230300000007-1483767039.us-east-1.elb.amazonaws.com/
 
-## Run (PowerShell)
-terraform init
-terraform fmt -recursive
-terraform validate
-terraform plan
-terraform apply -auto-approve
-terraform output -raw alb_dns_name
+This project demonstrates how to design, deploy, and manage a highly available web application on AWS using Terraform with a modular infrastructure-as-code approach
 
-Open:
-http://<alb_dns_name>
+The infrastructure is fully automated, version-controlled, and deployed usin PowerShell, making it reproducible and production-aligned.
 
-## Cleanup
-terraform destroy -auto-approve
 
-## Notes
-- Terraform state is stored remotely in S3
-- DynamoDB is used for state locking
-- tfstate files are not committed
+🧱 Architecture Overview
+
+The application is deployed across multiple Availability Zones and includes:
+
+- VPC with public subnets in 2 AZs
+- Internet Gatewayand public route table
+- Application Load Balancer (ALB) with health checks
+- Auto Scaling Group (ASG) with EC2 instances
+- Launch Template with user data (Apache auto-install)
+- Security Groups with least-privilege rules
+- Terraform modulesfor clean, reusable code
+- Terraform remote state (S3 + DynamoDB locking)
+
